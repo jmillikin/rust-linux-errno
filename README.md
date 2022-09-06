@@ -20,7 +20,7 @@ http_archive(
 
 http_archive(
     name = "rust_linux_errno",
-    sha256 = "...",
+    sha256 = "20eddf9456b1d9def6643adf71a3e6d2328f4fbc3063127b4334a710242371a2",
     urls = ["https://github.com/jmillikin/rust-linux-errno/releases/download/v1.0.0/linux-errno-v1.0.0.tar.xz"],
 )
 ```
