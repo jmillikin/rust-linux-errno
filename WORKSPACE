@@ -10,8 +10,9 @@ http_archive(
 
 http_archive(
     name = "rust_posix_errno",
-    sha256 = "74e8d0d36c1e6e8c64f0e837f6414c65cf02757a09bdcbf788c04581008f3308",
-    urls = ["https://github.com/jmillikin/rust-posix-errno/releases/download/v1.0.0/posix-errno-v1.0.0.tar.xz"],
+    sha256 = "0c86c849ff673372fe6415d4004a233565b57b2884ea49d3b725dd1296cc2529",
+    strip_prefix = "posix-errno-1.0.1",
+    urls = ["https://github.com/jmillikin/rust-posix-errno/releases/download/v1.0.1/posix-errno-1.0.1.tar.xz"],
 )
 
 load(

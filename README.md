@@ -14,14 +14,18 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 http_archive(
     name = "rust_posix_errno",
-    sha256 = "74e8d0d36c1e6e8c64f0e837f6414c65cf02757a09bdcbf788c04581008f3308",
-    urls = ["https://github.com/jmillikin/rust-posix-errno/releases/download/v1.0.0/posix-errno-v1.0.0.tar.xz"],
+    sha256 = "0c86c849ff673372fe6415d4004a233565b57b2884ea49d3b725dd1296cc2529",
+    strip_prefix = "posix-errno-1.0.1",
+    urls = ["https://github.com/jmillikin/rust-posix-errno/releases/download/v1.0.1/posix-errno-1.0.1.tar.xz"],
 )
 
 http_archive(
     name = "rust_linux_errno",
-    sha256 = "20eddf9456b1d9def6643adf71a3e6d2328f4fbc3063127b4334a710242371a2",
-    urls = ["https://github.com/jmillikin/rust-linux-errno/releases/download/v1.0.0/linux-errno-v1.0.0.tar.xz"],
+    # Obtain the package checksum from the release page:
+    # https://github.com/jmillikin/rust-linux-errno/releases/tag/v1.0.1
+    sha256 = "",
+    strip_prefix = "linux-errno-1.0.1",
+    urls = ["https://github.com/jmillikin/rust-linux-errno/releases/download/v1.0.1/linux-errno-1.0.1.tar.xz"],
 )
 ```
 
@@ -29,5 +33,5 @@ To depend on `linux-errno` from a Cargo workspace:
 
 ```
 [dependencies]
-linux-errno = { version = "1.0.0" }
+linux-errno = { version = "1.0.1" }
 ```
