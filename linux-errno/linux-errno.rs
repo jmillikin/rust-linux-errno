@@ -362,8 +362,8 @@ pub mod arch {
 		};
 
 		#[inline]
-		const fn err_name(err: crate::Error) -> Option<&'static str> {
-			if err == EDEADLOCK {
+		pub(crate) const fn err_name(err: crate::Error) -> Option<&'static str> {
+			if err.0.get() == EDEADLOCK.0.get() {
 				return Some(stringify!("EDEADLOCK"));
 			}
 			crate::arch_generic::err_name(err)
@@ -389,7 +389,7 @@ pub mod arch {
 	/// Linux error numbers for the `s390x` architecture.
 	#[cfg(any(target_arch = "s390x", doc))]
 	pub mod s390x {
-		pub use crate::arch_sparc::*;
+		pub use crate::arch_generic::*;
 	}
 
 	/// Linux error numbers for the `sparc` and `sparc64` architectures.
@@ -442,6 +442,9 @@ use crate::arch::parisc as target;
 	target_arch = "riscv64",
 ))]
 use crate::arch::riscv32 as target;
+
+#[cfg(target_arch = "s390x")]
+use crate::arch::s390x as target;
 
 #[cfg(any(
 	target_arch = "sparc",
