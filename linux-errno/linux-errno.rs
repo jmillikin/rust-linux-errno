@@ -337,6 +337,12 @@ pub mod arch {
 		pub use crate::arch_generic::*;
 	}
 
+	/// Linux error numbers for the `loongarch64` architecture.
+	#[cfg(any(target_arch = "loongarch64", doc))]
+	pub mod loongarch64 {
+		pub use crate::arch_generic::*;
+	}
+
 	/// Linux error numbers for the `mips` and `mips64` architectures.
 	#[cfg(any(
 		target_arch = "mips",
@@ -421,6 +427,9 @@ use crate::arch::alpha as target;
 	target_arch = "aarch64",
 ))]
 use crate::arch::arm as target;
+
+#[cfg(target_arch = "loongarch64")]
+use crate::arch::loongarch64 as target;
 
 #[cfg(any(
 	target_arch = "mips",
