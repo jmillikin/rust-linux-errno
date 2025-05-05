@@ -1,7 +1,5 @@
 load("@rules_rust//rust:defs.bzl", "rust_doc", "rust_library")
 
-package(default_visibility = ["//visibility:public"])
-
 rust_library(
     name = "linux-errno",
     srcs = glob([
@@ -13,6 +11,7 @@ rust_library(
     target_compatible_with = [
         "@platforms//os:linux",
     ],
+    visibility = ["//visibility:public"],
     deps = [
         "@rust_posix_errno//posix-errno",
     ],
