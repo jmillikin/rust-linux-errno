@@ -10,9 +10,9 @@ http_archive(
 
 http_archive(
     name = "rust_posix_errno",
-    sha256 = "0c86c849ff673372fe6415d4004a233565b57b2884ea49d3b725dd1296cc2529",
-    strip_prefix = "posix-errno-1.0.1",
-    urls = ["https://github.com/jmillikin/rust-posix-errno/releases/download/v1.0.1/posix-errno-1.0.1.tar.xz"],
+    sha256 = "e3f1c80383975b3f2decce96a799181392ea90fbb4540aa7b6bfd97608c5e570",
+    strip_prefix = "posix-errno-1.0.2",
+    urls = ["https://github.com/jmillikin/rust-posix-errno/releases/download/v1.0.1/posix-errno-1.0.2.tar.xz"],
 )
 
 load(
@@ -24,6 +24,5 @@ load(
 rules_rust_dependencies()
 
 rust_register_toolchains(
-    edition = "2018",
     version = "1.63.0",
 )

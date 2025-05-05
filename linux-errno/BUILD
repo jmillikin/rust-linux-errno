@@ -9,6 +9,7 @@ rust_library(
         "linux-errno_*.rs",
     ]),
     crate_features = ["posix-traits"],
+    edition = "2018",
     target_compatible_with = [
         "@platforms//os:linux",
     ],
